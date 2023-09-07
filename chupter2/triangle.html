@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triangle</title>
+  </head>
+  <body>
+    <h1>Triangle</h1>
+    <label for="length">Length:</label>
+    <br>
+    <label for="height">Width:</label>
+    <input type="number" id="height">
+    <br>
+    <button onclick="triangle()">Calculate Area</button>
+    <p id="result"></p>
+
+    <script>
+      function triangle() {
+     
+        let height = parseInt(document.getElementById("height").value);
+        //
+        let result = '';
+        for (let i=1; i<=height; i++) {
+          result += ('เทียนสุดเท่'.repeat(i)+'<br>');
+        }    
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
