@@ -4,7 +4,7 @@
   }
   
 #piano {
-   background-color: rgb(81, 212, 235);
+   background-color: rgb(7, 88, 155);
    width: 992px;
    height: 290px;
    border-radius: 10px;
@@ -32,6 +32,7 @@
   height: 180px;
   margin: 0 auto;
   display: flex;
+  overflow: hidden;
 }
 
 .octave {
@@ -45,11 +46,19 @@
     height: 175px;
     margin: 2px;
     border-radius: 0 0 3px 3px;
+    padding-top: 125px;
 }
 
 .black {
     position: relative;
+    z-index: 998;
   }
+.label {
+  text-align: center;
+  font-family: sans-serif;
+  line-height: 2em;
+  font-size: 0.8em;
+}
 
   .black>.label {
     position: absolute;
@@ -57,6 +66,7 @@
     width: 32px;
     left: -16px;
     top: 50px;
+    z-index: 999;
   }
 
   .black::after {
@@ -68,3 +78,26 @@
     left: -16px;
     border-radius: 0 0 3px 3px;
   }
+  /* Media queries for responsiveness */
+@media (max-width: 768px) {
+  #piano {
+    width: 358px;
+  }
+
+  #keys {
+    width: 316px;
+  }
+}
+.key:active, .pressed {
+  transform: translateY(2px);
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  #piano {
+    width: 675px;
+  }
+
+  #keys {
+    width: 633px;
+  }
+}
